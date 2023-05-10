@@ -1,4 +1,4 @@
-name: Upload Website
+name: Upload Website marvel-comics
 
 on:
   push:
