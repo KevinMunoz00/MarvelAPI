@@ -12,7 +12,7 @@ jobs:
       - uses: actions/checkout@master
       - run: npm install
       - run: CI='' npm run build
-      - uses: KevinMunoz00/MarvelAPI@marvel-comics
+      - uses: KevinMunoz00/MarvelAPI@master
         with:
           args: --acl public-read --follow-symlinks --delete
         env:
