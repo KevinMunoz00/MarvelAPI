@@ -24,7 +24,7 @@ function App() {
         <div className="header">
           <div id='elem'>
             <img id='logousu' src={logoUsuario} alt="Logo Usuario" className="img-fluid" />
-            <h1 id='text1' className="d-inline-block ml-2 mb-0 text-white">KEVIN Mu</h1>
+            <h1 id='text1' className="d-inline-block ml-2 mb-0 text-white">KEVIN</h1>
           </div>
           <div id='elem' className='elem1'>
             <img src={marvelLogo} alt="Marvel Logo" className="img-fluid" />
