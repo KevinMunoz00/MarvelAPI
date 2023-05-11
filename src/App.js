@@ -7,11 +7,11 @@ import marvelSub from "./assets/marvel-sub.png";
 import searchLogo from "./assets/search.png";
  
 function App() {
-  const [characters, setCharacters] = useState([]);
+  const [personajes, setPersonajes] = useState([]);
   useEffect(() => {
-    axios.get('https://kgqhzontqtvuylzwsbnxd4tsxi0fintf.lambda-url.us-east-1.on.aws/')
+    axios.get('https://7wjopxg567f3uni47lmm54wf2i0mfany.lambda-url.us-east-1.on.aws/')
       .then(response => {
-        setCharacters(response.data.data.results);
+        setPersonajes(response.data.data.results);
       })
       .catch(error => {
         console.log(error);
@@ -19,66 +19,62 @@ function App() {
   }, []);
  
   return (
-    <div className="container-fluid px-0">
-      <div className="container-fluid px-0">
-        <div className="header">
-          <div id='elem'>
-            <img id='logousu' src={logoUsuario} alt="Logo Usuario" className="img-fluid" />
-            <h1 id='text1' className="d-inline-block ml-2 mb-0 text-white">ANDREW</h1>
-          </div>
-          <div id='elem' className='elem1'>
-            <img src={marvelLogo} alt="Marvel Logo" className="img-fluid" />
-          </div>
-          <div id='elem'>
-            <img src={marvelSub} alt="Marvel Unlimited Subscribe" className="img-fluid" />
-            <h1 id='text2' className="d-inline-block ml-10 mb-0 text-white">MARVEL UNLIMITED SUBSCRIBE</h1>
-          </div>
-          <div id='elem'>
-            <img id='searchl' src={searchLogo} alt="Search Logo" className="img-fluid" />
-          </div>
+    <div className="container-fluid">
+      <div className='contenedor-iconos'>
+        <div id='elem'>
+          <img className='logo-usu' src={logoUsuario}/>
+          <h1 className='texto-arriba'>ANDREW</h1>
         </div>
-
-        <nav className="navbar navbar-expand-md navbar-dark bg-marvel py-0">
-          <div className="container">
-            <div className="" id="navbarNav">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <a className="nav-link" href="#">CHARACTERS</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">COMICS</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">SERIES</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">STORIES</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <div id='elem' className='elem2'>
+          <img className='logo-marvel' src={marvelLogo}/>
+        </div>
+        <div id='elem'>
+          <img className='logo-marvel-sub' src={marvelSub}/>
+          <h1 className="texto-arriba">MARVEL UNLIMITED SUBSCRIBE</h1>
+        </div>
+        <div id='elem'>
+          <img id='searchl' src={searchLogo} alt="Search Logo" className="img-fluid" />
+        </div>
       </div>
 
-      <h1 className="text-center mt-5 mb-5">Marvel Characters</h1>
-      <div className="container">
-        {characters.map(character => (
-          <div key={character.id} className="card mb-3">
-            <div className="row no-gutters">
-              <div className="col-md-4">
-                <img src={`${character.thumbnail.path}.${character.thumbnail.extension}`} className="card-img" alt={character.name} />
+      <nav className='contenedor-menu'>
+        <ul className='menu'>
+          <li className='menu-celdas'>
+            <a className='menu-enlaces' href='#'>PERSONAJES</a>
+          </li>
+          <li className='menu-celdas'>
+            <a className='menu-enlaces' href='#'>COMICS</a>
+          </li>
+          <li className='menu-celdas'>
+            <a className='menu-enlaces' href='#'>SERIES</a>
+          </li>
+          <li className='menu-celdas'>
+            <a className='menu-enlaces' href='#'>HISTORIAS</a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <h1 className="titulo">Marvel Characters</h1>
+
+      <div className='contenedor-personajes'>
+        {personajes.map(personaje => (
+          <div className='personajes'>
+            <div>
+              <img className='personaje-imagen' src={`${personaje.thumbnail.path}.${personaje.thumbnail.extension}`}></img>
+            </div>
+            <div className='personaje-informacion'>
+              <div className='personaje-nombre'>
+                <h2>{personaje.name}</h2>
+                <p>{personaje.description}</p>
               </div>
-              <div className="col-md-8">
-                <div className="card-body">
-                  <h5 className="card-title">{character.name}</h5>
-                  <p className="card-text">{character.description}</p>
-                  <ul>
-                    <h5>Series del personaje: </h5>
-                    {character.series.items.map(series => (
-                      <li key={series.name}><a href={series.resourceURI}>{series.name}</a></li>
-                    ))}
-                  </ul>
-                </div>
+              <div className='personaje-series'>
+                <h3>Series del Personaje: </h3>
+                <ul className='personaje-lista-series'>
+                  {personaje.series.items.map(series => (
+                    <li key={series.name}><a href={series.resourceURI}>{series.name}</a></li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
