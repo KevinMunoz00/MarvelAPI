@@ -9,7 +9,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v2
       - run: npm install
       - run: CI='' npm run build
       - uses: KevinMunoz00/s3-Actus@main
