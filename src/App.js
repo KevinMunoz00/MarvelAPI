@@ -7,11 +7,11 @@ import marvelSub from "./assets/marvel-sub.png";
 import searchLogo from "./assets/search.png";
 
 function App() {
-  const [comics, setComics] = useState([]);
+  const [comics, setComic] = useState([]);
   useEffect(() => {
-    axios.get('https://oz372alqvuecpbi7vacclnlrky0meela.lambda-url.us-east-1.on.aws/')
+    axios.get('https://rhcv7znabiy35fiejbp6tjxoru0mtfmw.lambda-url.us-east-1.on.aws/')
       .then(response => {
-        setComics(response.data.data.results);
+        setComic(response.data.data.results);
       })
       .catch(error => {
         console.log(error);
@@ -19,50 +19,47 @@ function App() {
   }, []);
 
   return (
-    <div className="container-fluid px-0">
-      <div className="container-fluid px-0">
-        <div className="header">
-          <div id='elem'>
-            <img id='logousu' src={logoUsuario} alt="Logo Usuario" className="img-fluid" />
-            <h1 id='text1' className="d-inline-block ml-2 mb-0 text-white">KEVIN</h1>
-          </div>
-          <div id='elem' className='elem1'>
-            <img src={marvelLogo} alt="Marvel Logo" className="img-fluid" />
-          </div>
-          <div id='elem'>
-            <img src={marvelSub} alt="Marvel Unlimited Subscribe" className="img-fluid" />
-            <h1 id='text2' className="d-inline-block ml-10 mb-0 text-white">MARVEL UNLIMITED SUBSCRIBE</h1>
-          </div>
-          <div id='elem'>
-            <img id='searchl' src={searchLogo} alt="Search Logo" className="img-fluid" />
-          </div>
+    <div className="container-fluid">
+      <div className='contenedor-iconos'>
+        <div id='elem'>
+          <img className='logo-usu' src={logoUsuario} />
+          <h1 className='texto-arriba'>KEVIN</h1>
         </div>
-
-        <nav className="navbar navbar-expand-md navbar-dark bg-marvel py-0">
-          <div className="container">
-            <div className="" id="navbarNav">
-              <ul className="navbar-nav ml-auto">
-                <li className="nav-item">
-                  <a className="nav-link" href="#">CHARACTERS</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">COMICS</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">SERIES</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#">STORIES</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
+        <div id='elem' className='elem2'>
+          <img className='logo-marvel' src={marvelLogo} />
+        </div>
+        <div id='elem'>
+          <img className='logo-marvel-sub' src={marvelSub} />
+          <h1 className="texto-arriba">MARVEL UNLIMITED SUBSCRIBE</h1>
+        </div>
+        <div id='elem'>
+          <img id='searchl' src={searchLogo} alt="Search Logo" className="img-fluid" />
+        </div>
       </div>
-      <h1 className="text-center mt-5 mb-5">Marvel Comics</h1>
-      <div className="row gx-2 gx-lg-3">
+
+      <nav className='contenedor-menu'>
+        <ul className='menu'>
+          <li className='menu-celdas'>
+            <a className='menu-enlaces' href='#'>PERSONAJES</a>
+          </li>
+          <li className='menu-celdas'>
+            <a className='menu-enlaces' href='#'>COMICS</a>
+          </li>
+          <li className='menu-celdas'>
+            <a className='menu-enlaces' href='#'>SERIES</a>
+          </li>
+          <li className='menu-celdas'>
+            <a className='menu-enlaces' href='#'>HISTORIAS</a>
+          </li>
+        </ul>
+      </nav>
+
+
+      <h1 className="titulo">Marvel Comics</h1>
+
+      <div className='contenedor-personajes'>
         {comics.map((comic) => (
-          <div key={comic.id} className="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
+          <div key={comic.id} className="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 d-inline-block mx-3 my-3">
             <div className="card h-100">
               <img
                 className="card-img-top img-fluid"
