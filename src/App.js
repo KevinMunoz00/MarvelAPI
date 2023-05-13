@@ -43,7 +43,7 @@ function App() {
             <a className='menu-enlaces' href='#'>PERSONAJES</a>
           </li>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='#'>COMICS1</a>
+            <a className='menu-enlaces' href='#'>COMICS</a>
           </li>
           <li className='menu-celdas'>
             <a className='menu-enlaces' href='#'>SERIES</a>
