@@ -3,7 +3,7 @@ name: Upload Website
 on:
   push:
     branches:
-      - marvel-comics
+      - marvel-series
 
 jobs:
   deploy:
