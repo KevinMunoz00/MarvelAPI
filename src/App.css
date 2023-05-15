@@ -155,9 +155,15 @@
   align-items: center;
 }
 
+.personaje-contenedor-imagen {
+  background-color: transparent;
+}
+
 .personaje-imagen {
   width: 25vw;
+  height: auto;
   border-radius: 20px;
+  background-size: cover;
 }
 
 .personaje-informacion {

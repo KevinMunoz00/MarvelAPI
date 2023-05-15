@@ -9,7 +9,7 @@ import searchLogo from "./assets/search.png";
 function App() {
   const [personajes, setPersonajes] = useState([]);
   useEffect(() => {
-    axios.get('https://7wjopxg567f3uni47lmm54wf2i0mfany.lambda-url.us-east-1.on.aws/')
+    axios.get('https://4vjrhj24kdmmcgbgtv7i2c5z4e0esdfe.lambda-url.us-east-1.on.aws/')
       .then(response => {
         setPersonajes(response.data.data.results);
       })
@@ -60,7 +60,7 @@ function App() {
       <div className='contenedor-personajes'>
         {personajes.map(personaje => (
           <div className='personajes'>
-            <div>
+            <div className='personaje-contenedor-imagen'>
               <img className='personaje-imagen' src={`${personaje.thumbnail.path}.${personaje.thumbnail.extension}`}></img>
             </div>
             <div className='personaje-informacion'>
