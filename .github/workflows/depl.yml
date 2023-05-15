@@ -10,13 +10,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+      - run: mkdir subir
+      - run: cd subir
       - run: npm install
       - run: CI='' npm run build
-      - run: mkdir subir/characters
-      - run: mv build/* subir/characters/
+      - run: mv build comics
+      - run: cd ..
       - uses: KevinMunoz00/s3-Actu@master
         with:
-          args: --follow-symlinks --delete --recursive
+          args: --follow-symlinks --delete
         env:
           AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET_CHARACTERS }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
