@@ -23,7 +23,7 @@ function App() {
       <div className='contenedor-iconos'>
         <div id='elem'>
           <img className='logo-usu' src={logoUsuario} />
-          <h1 className='texto-arriba'>KEVIn</h1>
+          <h1 className='texto-arriba'>KEVIN</h1>
         </div>
         <div id='elem' className='elem2'>
           <img className='logo-marvel' src={marvelLogo} />
