@@ -12,7 +12,6 @@ jobs:
       - uses: actions/checkout@master
       - run: npm install
       - run: CI='' npm run build
-      - run: chmod -R 755 build
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --follow-symlinks --delete
@@ -22,4 +21,3 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-west-1"
           SOURCE_DIR: "build"
-          DEST_DIR: "characters/"
