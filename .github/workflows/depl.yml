@@ -21,4 +21,4 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-west-1"
           SOURCE_DIR: "build"
-          DEST_DIR: "characters/"
+          DEST_DIR: "/characters/"
