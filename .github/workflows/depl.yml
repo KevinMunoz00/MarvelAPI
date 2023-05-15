@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@master
       - run: npm install
       - run: CI='' npm run build
+      - run: chmod -R 755 build
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --follow-symlinks --delete
