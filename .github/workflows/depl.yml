@@ -15,6 +15,7 @@ jobs:
       - run: npm install
       - run: CI='' npm run build
       - run: mv build characters
+      - run: cd ..
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --follow-symlinks --delete
