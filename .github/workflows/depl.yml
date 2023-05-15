@@ -11,11 +11,14 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - run: mkdir subir
-      - run: cd subir
+      - run: ls
       - run: npm install
+      - run: cd subir
       - run: CI='' npm run build
       - run: mv build characters
+      - run: ls
       - run: cd ..
+      - run: ls
       - uses: KevinMunoz00/s3-Actu@master
 
         with:
