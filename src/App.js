@@ -23,7 +23,7 @@ function App() {
       <div className='contenedor-iconos'>
         <div id='elem'>
           <img className='logo-usu' src={logoUsuario} />
-          <h1 className='texto-arriba'>JOHaN</h1>
+          <h1 className='texto-arriba'>JOHAN</h1>
         </div>
         <div id='elem' className='elem2'>
           <img className='logo-marvel' src={marvelLogo} />
@@ -54,7 +54,7 @@ function App() {
         </ul>
       </nav>
 
-      <h1 className="titulo">Marvel Characters</h1>
+      <h1 className="titulo">Marvel Series</h1>
       <div className="row gx-2 gx-lg-3">
         {comics.map((comic) => (
           <div key={comic.id} className="col-6 col-sm-4 col-md-3 col-lg-2 mb-3">
