@@ -14,8 +14,7 @@ jobs:
       - run: cd subir
       - run: npm install
       - run: CI='' npm run build
-      - run: mv build comics
-      - run: cd ..
+      - run: mv build characters
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --follow-symlinks --delete
