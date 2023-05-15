@@ -10,17 +10,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - run: mkdir subir
-      - run: ls
       - run: npm install
-      - run: cd subir
       - run: CI='' npm run build
-      - run: mv build characters
-      - run: ls
-      - run: cd ..
-      - run: ls
       - uses: KevinMunoz00/s3-Actu@master
-
         with:
           args: --follow-symlinks --delete
         env:
@@ -28,5 +20,5 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-west-1"
-          SOURCE_DIR: "subir"  
-      #- run: chmod -R 777 characters
+          SOURCE_DIR: "build"
+          DEST_DIR: "characters/"
