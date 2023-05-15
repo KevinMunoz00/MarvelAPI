@@ -48,7 +48,7 @@
   flex-direction: column;
   --bs-gutter-x: 0rem !important;
   margin: 0;
-  padding: 0;
+  padding: 0 50vw !important;
 }
 
 .contenedor-iconos {
