@@ -40,16 +40,16 @@ function App() {
       <nav className='contenedor-menu'>
         <ul className='menu'>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://marvelcharacters1.s3.amazonaws.com/index.html'>PERSONAJES</a>
+            <a className='menu-enlaces' href='#'>PERSONAJES</a>
           </li>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://marvelcomcis.s3.amazonaws.com/index.html'>COMICS</a>
+            <a className='menu-enlaces' href='#'>COMICS</a>
           </li>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://marvelseries1.s3.amazonaws.com/index.html'>SERIES</a>
+            <a className='menu-enlaces' href='#'>SERIES</a>
           </li>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://marvelstories1.s3.amazonaws.com/index.html'>HISTORIAS</a>
+            <a className='menu-enlaces' href='#'>HISTORIAS</a>
           </li>
         </ul>
       </nav>
@@ -71,7 +71,7 @@ function App() {
                 <h3>Series del Personaje: </h3>
                 <ul className='personaje-lista-series'>
                   {personaje.series.items.map(series => (
-                    <li key={series.name}><a href={series.resourceURI}>{series.name}</a></li>
+                    <li><a href={series.resourceURI}>{series.name}</a></li>
                   ))}
                 </ul>
               </div>
