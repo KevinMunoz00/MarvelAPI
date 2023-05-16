@@ -13,8 +13,8 @@ jobs:
       - run: npm install
       - run: CI='' npm run build
       - run: cd build
-             && mkdir characters
-             && mv index.html characters
+             && mkdir charactersv1
+             && mv index.html charactersv1
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --follow-symlinks --delete
