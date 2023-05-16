@@ -12,6 +12,9 @@ jobs:
       - uses: actions/checkout@master
       - run: npm install
       - run: CI='' npm run build
+      - run: cd build
+          && mkdir comics
+          && mv index.html comics
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --follow-symlinks --delete

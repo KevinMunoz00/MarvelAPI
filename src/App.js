@@ -57,29 +57,25 @@ function App() {
 
       <h1 className="titulo">Marvel Comics</h1>
 
-      <div className='contenedor-personajes'>
+      <div className='contenedor-comics'>
         {comics.map((comic) => (
-          <div key={comic.id} className="col-6 col-sm-4 col-md-3 col-lg-2 mb-3 d-inline-block mx-3 my-3">
-            <div className="card h-100">
-              <img
-                className="card-img-top img-fluid"
-                src={`${comic.thumbnail.path}/portrait_incredible.${comic.thumbnail.extension}`}
-                alt={comic.title}
-              />
-              <div className="card-body p-1">
-                <h6 className="card-title fw-bold">{comic.title}</h6>
-                <p className="card-text mb-1">
-                  <strong>Titulo: </strong>
-                  {comic.title}
-                </p>
-                <p className="card-text mb-1">
-                  <strong>Descripcion: </strong>
-                  {comic.description}
-                </p>
-                <p className="card-text mb-1">
-                  <strong>Creadores: </strong>
-                  {comic.creators.items.map((creator) => creator.name).join(", ")}
-                </p>
+          <div className='comics'>
+            <div className='comic-contenedor-imagen'>
+              <img className='comic-imagen' src={`${comic.thumbnail.path}.${comic.thumbnail.extension}`}></img>
+            </div>
+            <div className='comic-informacion'>
+              <div className='comic-nombre'>
+                <h2><strong>{comic.title}</strong></h2>
+                <p><strong>Descripción: </strong>{comic.description}</p>
+              </div>
+              <div className='comic-creadores'>
+                <p><strong>Creadores: </strong>
+                  {comic.creators.items.map((creator) =>
+                    creator.name).join(", ")
+                  }</p>
+                <ul className='comic-lista-series'>
+
+                </ul>
               </div>
             </div>
           </div>
