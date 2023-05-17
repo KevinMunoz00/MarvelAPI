@@ -40,7 +40,7 @@ function App() {
       <nav className='contenedor-menu'>
         <ul className='menu'>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://marvelcharacters1.s3.amazonaws.com/index.html'>PERSONAJES</a>
+            <a className='menu-enlaces' href='https://marvelcharactersv2.s3.amazonaws.com/index.html'>PERSONAJES</a>
           </li>
           <li className='menu-celdas'>
             <a className='menu-enlaces' href='https://marvelcomcis.s3.amazonaws.com/index.html'>COMICS</a>
@@ -73,9 +73,6 @@ function App() {
                   {comic.creators.items.map((creator) =>
                     creator.name).join(", ")
                   }</p>
-                <ul className='comic-lista-series'>
-
-                </ul>
               </div>
             </div>
           </div>
