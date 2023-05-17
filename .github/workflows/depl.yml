@@ -12,9 +12,6 @@ jobs:
       - uses: actions/checkout@master
       - run: npm install
       - run: CI='' npm run build
-      - run: cd build
-             && mkdir characters
-             && mv asset-manifest.json favicon.ico index.html logo192.png logo512.png manifest.json robots.txt static characters
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --acl public-read --follow-symlinks --delete
