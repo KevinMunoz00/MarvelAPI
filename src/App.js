@@ -43,7 +43,7 @@ function App() {
             <a className='menu-enlaces' href='https://marvelcharactersv2.s3.amazonaws.com/index.html'>PERSONAJES</a>
           </li>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://marvelcomcis.s3.amazonaws.com/index.html'>COMICS</a>
+            <a className='menu-enlaces' href='https://marvelcomicsv2.s3.amazonaws.com/index.html'>COMICS</a>
           </li>
           <li className='menu-celdas'>
             <a className='menu-enlaces' href='https://marvelseries1.s3.amazonaws.com/index.html'>SERIES</a>
