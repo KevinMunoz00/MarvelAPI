@@ -12,6 +12,8 @@ jobs:
       - uses: actions/checkout@master
       - run: npm install
       - run: CI='' npm run build
+      - run: mkdir build/characters
+      - run: cp -R build/* build/characters/
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --acl public-read --follow-symlinks --delete
@@ -21,4 +23,3 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-east-1"
           SOURCE_DIR: "build"
-          DEST_DIR: "characters"
