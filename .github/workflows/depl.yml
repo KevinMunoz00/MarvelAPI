@@ -13,7 +13,7 @@ jobs:
       - run: npm install
       - run: CI='' npm run build
       - run: cd build
-             && mkdir charactersv1
+             && mkdir characters
              && mv index.html characters
       - uses: KevinMunoz00/s3-Actu@master
         with:
