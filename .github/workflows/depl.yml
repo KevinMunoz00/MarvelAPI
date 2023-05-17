@@ -12,9 +12,6 @@ jobs:
       - uses: actions/checkout@master
       - run: npm install
       - run: CI='' npm run build
-      - run: cd build
-             && mkdir stories
-             && mv index.html stories
       - uses: KevinMunoz00/s3-Actu@master
         with:
           args: --follow-symlinks --delete
