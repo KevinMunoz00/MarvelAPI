@@ -14,10 +14,10 @@ jobs:
              && ls
              && cd subir
              && ls
-      - run: npm install
-      - run: CI='' npm run build 
+             && npm install
+             && CI='' npm run build 
              && ls
-      - run: mv build characters
+             && mv build characters
              && ls
              && cd ..
       - uses: KevinMunoz00/s3-Actu@master
