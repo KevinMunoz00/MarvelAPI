@@ -19,7 +19,7 @@ function App() {
   }, []);
  
   return (
-    <div className="container-fluid" id='primer-contenedorr'>
+    <div className="container-fluid" id='primer-contenedor'>
       <div className='contenedor-iconos'>
         <div id='elem'>
           <img className='logo-usu' src={logoUsuario}/>
