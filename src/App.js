@@ -40,7 +40,7 @@ function App() {
       <nav className='contenedor-menu'>
         <ul className='menu'>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://marvelcharactersv2.s3.amazonaws.com/index.html'>PERSONAJES</a>
+            <a className='menu-enlaces' href='https://d3fv4a5rs1kzo7.cloudfront.net/characters/index.html'>PERSONAJES</a>
           </li>
           <li className='menu-celdas'>
             <a className='menu-enlaces' href='https://marvelcomicsv2.s3.amazonaws.com/index.html'>COMICS</a>
