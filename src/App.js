@@ -42,16 +42,16 @@ function App() {
       <nav className='contenedor-menu'>
         <ul className='menu'>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://d3fv4a5rs1kzo7.cloudfront.net/characters/index.html'>PERSONAJES</a>
+            <a className='menu-enlaces' href='/characters/index.html'>PERSONAJES</a>
           </li>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://d3fv4a5rs1kzo7.cloudfront.net/index.html'>COMICS</a>
+            <a className='menu-enlaces' href='/index.html'>COMICS</a>
           </li>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://d3fv4a5rs1kzo7.cloudfront.net/series/index.html'>SERIES</a>
+            <a className='menu-enlaces' href='/series/index.html'>SERIES</a>
           </li>
           <li className='menu-celdas'>
-            <a className='menu-enlaces' href='https://d3fv4a5rs1kzo7.cloudfront.net/stories/index.html'>HISTORIAS</a>
+            <a className='menu-enlaces' href='/stories/index.html'>HISTORIAS</a>
           </li>
         </ul>
       </nav>
