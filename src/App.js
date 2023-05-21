@@ -8,6 +8,7 @@ import searchLogo from "./assets/search.png";
 
 function App() {
   const [stories, setstories] = useState([]);
+  var cont = 1;
   useEffect(() => {
     axios.get('https://qxvow6mohts7fdzaut7by5jqpy0gtrdq.lambda-url.us-east-1.on.aws/')
       .then(response => {
@@ -55,29 +56,28 @@ function App() {
       </nav>
 
       <h1 className="titulo">Marvel Stories</h1>
-      <div class="container">
-        <table class="table">
+      <div className="contenedor-tabla">
+        <table className="tabla-historias">
           <thead>
             <tr>
+              <th>Numero</th>
               <th>Titulo</th>
-              <th>Categoria</th>
-              <th>Serie</th>
-              <th>Titulo Original</th>
+              <th>Descripcion</th>
+              <th>Fecha</th>
             </tr>
           </thead>
           <tbody>
-            {stories.map((story) => (
-              <tr key={story.id}>
-                <td>{story.title}</td>
-                <td>{story.type}</td>
-                <td>
-                  {story.series.items.map((item) => (
-                    <div key={item.resourceURI}>{item.name}</div>
-                  ))}
-                </td>
-                <td>{story.originalIssue.name}</td>
-              </tr>
-            ))}
+            {stories.map((story) => {
+              const fechastory = story.modified;
+              return (
+                <tr key={story.id}>
+                  <td>{cont++}</td>
+                  <td>{story.originalIssue.name}</td>
+                  <td claseName="Descripcion">{story.title}</td>
+                  <td>{new Date(fechastory).toLocaleDateString('en-es', { year: "numeric", month: "short", day: "numeric" })}</td>
+                </tr>
+              );
+            })}
           </tbody>
         </table>
       </div>

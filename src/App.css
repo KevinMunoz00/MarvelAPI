@@ -137,39 +137,27 @@
   color: black;
 }
 
-.contenedor-personajes {
-  width: 100%;
-  height: auto;
-  background-color: #282c34;
-  padding: 2vh 10vw;
+table{
+  width: auto;
+  text-align: center;
+  border-collapse: separate;
+  margin: 2vh 5vw;
 }
 
-.personajes {
-  width: 90%;
-  border: 1px solid gray;
-  border-radius: 20px;
-  overflow: hidden;
-  display: flex;
-  background-color: white;
-  margin-bottom: 20px;
-  align-items: center;
+thead{
+  padding: 1vh 2vw;
+  font-weight: bold;
+
 }
 
-.personaje-contenedor-imagen {
-  background-color: transparent;
+td{
+  border: 1px solid black !important;
+  padding: 3vh 2vw;
+  
 }
 
-.personaje-imagen {
-  width: 25vw;
-  height: auto;
-  border-radius: 20px;
-  background-size: cover;
-}
-
-.personaje-informacion {
-  padding: 2vh 5vw;
-}
-
-.personaje-series h3 {
-  font-size: larger;
+tr:hover{
+  background-color: gray;
+  color: white;
+  text-decoration: underline;
 }
